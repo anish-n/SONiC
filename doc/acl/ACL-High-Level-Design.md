@@ -205,7 +205,7 @@ No update is needed to support ACL.
 
     INNER_MAC_REWRITE_ACTION = 12HEXDIG        ; Rewrite the inner mac field of a VXLAN packet with the 
                                                ; provided value (must also define an associated custom ACL_TABLE_TYPE
-											   ; as per https://github.com/sonic-net/SONiC/blob/master/doc/acl/ACL-Table-Type-HLD.md)
+                                               ; as per https://github.com/sonic-net/SONiC/blob/master/doc/acl/ACL-Table-Type-HLD.md)
 
     ETHER_TYPE    = h16                        ; Ethernet type field
 
