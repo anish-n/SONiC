@@ -203,7 +203,7 @@ No update is needed to support ACL.
                                                ; (only available to mirror acl
                                                ; table type)
 
-    INNER_MAC_REWRITE_ACTION = 12HEXDIG        ; Rewrite the inner mac field of a VXLAN packet with the 
+    INNER_SRC_MAC_REWRITE_ACTION = 12HEXDIG    ; Rewrite the inner mac field of a VXLAN packet with the 
                                                ; provided value (must also define an associated custom ACL_TABLE_TYPE
                                                ; as per https://github.com/sonic-net/SONiC/blob/master/doc/acl/ACL-Table-Type-HLD.md)
 
@@ -320,7 +320,7 @@ INNER_SRC_IP | ip_addr/mask | A valid IPv4 subnet in format IP/Mask
 ###### **Table 9: Actions used to perform vxlan inner packet src mac rewrite**
 Keyword for the action type    | Type | Description
 -------------------------------|------|------------
-INNER_MAC_REWRITE_ACTION | mac_address | Mac address to use when rewriting the inner src mac field of a vxlan packet
+INNER_SRC_MAC_REWRITE_ACTION | mac_address | Mac address to use when rewriting the inner src mac field of a vxlan packet
 
 ### 3.1.3 Orchestration Agent
 Orchestration Agent needs to be updated in order to support ACL in the AppDB and the SAI ACL API. There will be class AclOrch and a set of data structures implemented to handle ACL feature.
@@ -623,9 +623,12 @@ Ansible + PTF
 |tcp_flags     | ACL Rule property. TCP flags
 |ip_type       | ACL Rule property. IP type
 |dscp          | ACL Rule property. Dscp field. Valid for rules "mirror" tables only
+|inner_src_ip  | ACL Rule property. Inner src ip prefix to match on a VXLAN packet.
+|tunnel_vni    | ACL Rule property. VXLAN VNI field to match on.
 |              | ACTIONS
 |packet_action | ACL Rule property. Packet actions "forward" or "drop". Valid for rules in "L3" tables only
 |mirror_action | Action "mirror". Valid for rules in "mirror" tables only
+|inner_src_mac_rewrite_action | Action to rewrite the inner src mac rewrite field.
 *Keywords derived from the SAI ACL attributes.*
 # Appendix B: Sample input json file
 ```
