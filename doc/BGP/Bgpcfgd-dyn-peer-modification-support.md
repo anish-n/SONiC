@@ -55,16 +55,12 @@ This section describes the SONiC requirements for supporting enhanced CRUD opera
 - CLI commands to show VRF/VNET BGP neighbors
 
 ## 1.2 Scalability requirements
-
-### 1.2.1 Fine Grained Next-hop group
 ###### Table 2: Scalability
 | Component                | Expected value              |
 |--------------------------|-----------------------------|
-| Number of Dyn BGP Peers  | 4k                          |
-| Number of Peer ranges    | 2k                          |
-| Number of Route-maps     | 2k                          |
-| Number of Prefix-lists   | 2k                          |
-| Size of 1 Prefix-lists   | <10                         |
+| Number of Dynamic BGP Peers each with route-map, prefix-list and peer-group|2k|
+| Number of listen ranges|4k|
+| Size of each Route-map, Prefix-list|<10|
 
 
 # 2 Modules Design
