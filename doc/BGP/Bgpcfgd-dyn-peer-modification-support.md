@@ -28,7 +28,7 @@
 | 0.1 | 04/09/2025  |    Anish Narsian   | Initial version                   |
 
 # About this Manual
-This document provides the high level design to support enhanced CRUD operations on dynamic bgp peers(ie bgp listen range xxx peer-group yyyy) using a standard template-based mechanism.
+This document provides the high level design to support enhanced CRUD operations on dynamic bgp peers(ie: bgp listen ranges) using a standard template-based mechanism.
 
 # Use case
 SDN(Software Defined Networking) is used to program our devices for various use cases, and we intend to extend this to BGP configurations, specifically dynamic BGP peers. To that extent we intend to support enhanced CRUD operations on these peer types such as the ability to, at runtime, add new dynamic peers, modify peer ranges and delete dynamic peers. Beyond updating and deleting dynamic peers, their associated configurations like route maps, prefix lists and peer groups should also be modifiable with the proposed changes using the standard template mechanism.
